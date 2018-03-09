@@ -70,7 +70,6 @@ Options:
 """
 
 import contextlib
-import ldif3
 import re
 import sys
 
@@ -97,6 +96,14 @@ except ImportError:
     exit('This program requires that the `python-ldap` library'
          ' is installed: \n    pip install python-ldap\n'
          'http://pypi.python.org/pypi/python-ldap/')
+
+try:
+    import ldif3
+except ImportError:
+    exit('This program requires that the `ldif3` library'
+         ' is installed: \n    pip install ldif3\n'
+         'http://pypi.python.org/pypi/ldif3/')
+
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
